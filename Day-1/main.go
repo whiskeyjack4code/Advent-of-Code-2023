@@ -34,17 +34,7 @@ My Algorithm for this problem:
 
 */
 
-func main() {
-
-	fileName := "input.txt"
-	file, err := os.Open(fileName)
-
-	defer file.Close()
-
-	if err != nil {
-		log.Fatal(err)
-	}
-
+func HelpSantaGodDamnIt(file *os.File) int {
 	scanner := bufio.NewScanner(file)
 	calibrationTotal := 0
 
@@ -90,5 +80,20 @@ func main() {
 		}
 		calibrationTotal += wholeNum
 	}
-	fmt.Println(calibrationTotal) // Print the answer
+	return calibrationTotal
+}
+
+func main() {
+
+	fileName := "input.txt"
+	file, err := os.Open(fileName)
+
+	defer file.Close()
+
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	res := HelpSantaGodDamnIt(file)
+	fmt.Println(res)
 }
