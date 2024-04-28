@@ -55,7 +55,7 @@ func main() {
 		line := scanner.Text()
 
 		for _, v := range line {
-      firstDigit = 0  // reset the variable to prevent carryover on a line with no integers
+			firstDigit = 0 // reset the variable to prevent carryover on a line with no integers
 			num, err := strconv.Atoi(string(v))
 
 			if err != nil {
@@ -66,7 +66,7 @@ func main() {
 		}
 
 		for i := len(line) - 1; i >= 0; i-- {
-      lastDigit = 0  // reset the variable to prevent carryover on a line with no integers
+			lastDigit = 0 // reset the variable to prevent carryover on a line with no integers
 			v := line[i]
 			num, err := strconv.Atoi(string(v))
 
@@ -84,10 +84,10 @@ func main() {
 		lastAsString := strconv.Itoa(lastDigit)
 		wholeNum, err := strconv.Atoi((firstAsString + lastAsString))
 
-    // Check if conversion failed
+		// Check if conversion failed
 		if err != nil {
 			fmt.Println(err)
-    }
+		}
 		calibrationTotal += wholeNum
 	}
 	fmt.Println(calibrationTotal) // Print the answer
